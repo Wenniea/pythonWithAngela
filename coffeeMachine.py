@@ -56,25 +56,6 @@ while machineOn:
                 enough = False
                 break
 
-        # if choice == 'expresso':
-        # if resources["water"] - MENU["espresso"]["ingredients"]["water"] < 0:
-        # print('Sorry there is not enough water.')
-        # enough = False
-        # if resources["coffee"] - MENU["espresso"]["ingredients"]["coffee"] < 0:
-        # print('Test')
-        # print('Sorry there is not enough coffee.')
-        # enough = False
-        # elif choice == 'latte' or choice == 'cappuccino':
-        # if resources["water"] - MENU[choice]["ingredients"]["water"] < 0:
-        # print('Sorry there is not enough water.')
-        # enough = False
-        # if resources["coffee"] - MENU[choice]["ingredients"]["coffee"] < 0:
-        # print('Sorry there is not enough coffee.')
-        # enough = False
-        # if resources["milk"] - MENU[choice]["ingredients"]["milk"] < 0:
-        # print('Sorry there is not enough milk.')
-        # enough = False
-
     if enough:
         # process coins
         print('Please insert coins.')
@@ -102,13 +83,5 @@ while machineOn:
         if enough:
             for k, v in MENU[choice]['ingredients'].items():
                 resources[k] = resources[k] - v
-            # if choice == 'espresso':
-            # resources["water"] = resources["water"] - MENU["espresso"]["ingredients"]["water"]
-            # resources["coffee"] = resources["coffee"] - MENU["espresso"]["ingredients"][
-            # "coffee"]
-            # elif choice == 'cappuccino' or choice == 'latte':
-            # resources["water"] = resources["water"] - MENU[choice]["ingredients"]["water"]
-            # resources["coffee"] = resources["coffee"] - MENU[choice]["ingredients"]["coffee"]
-            # resources["milk"] = resources["milk"] - MENU[choice]["ingredients"]["milk"]
             money += itemCost
             print('Here is your ' + choice + ' ☕️. Enjoy!')
