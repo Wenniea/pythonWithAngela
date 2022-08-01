@@ -29,7 +29,9 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
-def isSufficient(drink):
+
+
+def is_sufficient(drink):
     """If sufficient resources, then return True, otherwise False"""
     for k, v in drink['ingredients'].items():
         if resources[k] - v < 0:
@@ -38,8 +40,9 @@ def isSufficient(drink):
         else:
             return True
 
-def processCoins():
-    """ caluculate the amount of coins inserted"""
+
+def process_coins():
+    """ calculate the amount of coins inserted"""
     print('Please insert coins.')
     print('How many quarters?: ')
     quarters = input()
@@ -55,7 +58,8 @@ def processCoins():
 
     return moneyInserted
 
-def enoughMoney(moneyInserted, drink):
+
+def enough_money(moneyInserted, drink):
     """ if enough money inserted then return True, else return False"""
     itemCost = drink['cost']
     global money
@@ -72,11 +76,13 @@ def enoughMoney(moneyInserted, drink):
         money += itemCost
         return True
 
-def makeCoffee(drink):
+
+def make_coffee(drink):
     """ deduct the ingredients from the coffee machine resource"""
     for k, v in drink['ingredients'].items():
         resources[k] = resources[k] - v
     print('Here is your ' + choice + ' ☕️. Enjoy!')
+
 
 machineOn = True
 money = 0.0
@@ -93,8 +99,7 @@ while machineOn:
         print('Money: $' + str(money))
     else:
         drink = MENU[choice]
-        if isSufficient(drink):
-            moneyInserted = processCoins()
-            if enoughMoney(moneyInserted, drink):
-                makeCoffee(drink)
-
+        if is_sufficient(drink):
+            moneyInserted = process_coins()
+            if enough_money(moneyInserted, drink):
+                make_coffee(drink)
