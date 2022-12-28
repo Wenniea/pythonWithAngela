@@ -3,7 +3,8 @@
 import colorgram
 import turtle as t
 
-tim = t.Turtle()
+tim = t.Turtle()  # Turtle is the class constructor to instantiate the class and turtle is the
+# package
 
 rgb_colors = []
 colors = colorgram.extract('image.jpg', 30)
